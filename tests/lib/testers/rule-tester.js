@@ -657,14 +657,14 @@ describe("RuleTester", function() {
                     valid: "not an array or object",
                     invalid: []
                 });
-            });
+            }, /^Must supply an array of tests or a scenario object$/);
 
             assert.throws(function() {
                 ruleTester.run("foo", emptyRule, {
                     valid() {},
                     invalid: []
                 });
-            });
+            }, /^Must supply an array of tests or a scenario object$/);
         });
 
         it("should throw if 'invalid' value is not an array or object", function() {
@@ -673,14 +673,14 @@ describe("RuleTester", function() {
                     valid: [],
                     invalid: "not an array or object"
                 });
-            });
+            }, /^Must supply an array of tests or a scenario object$/);
 
             assert.throws(function() {
                 ruleTester.run("foo", emptyRule, {
                     valid: [],
                     invalid() {}
                 });
-            });
+            }, /^Must supply an array of tests or a scenario object$/);
         });
     });
 
